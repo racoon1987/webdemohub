@@ -6,19 +6,22 @@ $demo_items = [
 		'url'			=> $base_url . 'netcom/index.php/chome',
 		'img' 			=> 'imgs/codeigniter.jpg',
 		'name' 			=> 'Demo CodeIgniter',
-		'description' 	=> 'A website with social network and forum mixing.'
+		'description' 	=> 'A website with social network and forum mixing.',
+		'extra'			=> 'no'
 	],
 	'demo_laravel' => [
 		'url'			=> $base_url . 'index.php/posts',
 		'img' 			=> 'imgs/laravel.jpg',
 		'name' 			=> 'Demo Laravel',
-		'description' 	=> 'A website with basic functions.'
+		'description' 	=> 'A website with basic functions.',
+		'extra'			=> 'no'
 	],
 	'mini_projects' => [
 		'url'			=> $base_url . '',
 		'img' 			=> 'imgs/csshtmljs.jpg',
 		'name' 			=> 'Mini projects',
-		'description' 	=> 'Collection of mini projects (HTML, CSS, Javascript).'
+		'description' 	=> 'Collection of mini projects (HTML, CSS, Javascript).',
+		'extra'			=> 'yes'
 	]
 ];
 
@@ -35,6 +38,22 @@ $demo_items = [
 	<link rel="stylesheet" href="animate.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="130">
+
+<div class="extra"> <!-- this is a bottom menu to show extra information -->
+	<div class="container">
+		<div class="row">
+			<h2>Demo's name</h2>
+			<button>&times;</button>
+		</div>
+		<div class="row">
+			<a href="">aksjdakjsd asdashgd as dajshgd (asdasdasd)</a>
+			<!-- <a href="">aksjdakjsd asdashgd as dajshgd (asdasdasd)</a>
+			<a href="">aksjdakjsd asdashgd as dajshgd (asdasdasd)</a>
+			<a href="">aksjdakjsd asdashgd as dajshgd (asdasdasd)</a> -->
+		</div>
+	</div>
+</div>
+
 <nav class="navbar navbar-default navbar-inverse navbar-fixed-top navbar-height padding20">
   <div class="container">
     <div class="navbar-header">
@@ -63,16 +82,16 @@ $demo_items = [
 	</div>
 </section>
 
-<section id="demos" class="padding80 wow bounceInLeft" data-wow-offset="300">
+<section id="demos" class="padding80 wow bounceInLeft" data-wow-offset="300">	
 	<div class="container">
 		<h1>DEMOS</h1>
 		<p class="lead">My latest CodeIgniter, Laravel, HTML, CSS, Javascript demos.</p>
-		<div class="row">
+		<div class="row">			
 			<?php foreach($demo_items as $demo) { ?>
-				<!-- show links to the demo application -->
+				<!-- show links to the demo applications -->
 				<div class="col-md-4 col-xs-6">
-					<div class="gallery">
-						<a href="<?php echo $demo['url']; ?>">
+					<div class="gallery">						
+						<a href="<?php echo $demo['url']; ?>" data-extra="<?php echo $demo['extra']; ?>">
 							<div class="demo-thumb">
 								<img src="<?php echo $demo['img']; ?>" alt="<?php echo $demo['name']; ?>">
 							</div>					
@@ -122,6 +141,14 @@ $demo_items = [
 		if($(window).width() > 768) {
 			new WOW().init();
 		}
+
+		$('.gallery a').click(function(e){
+			if($(this).data('extra') == 'yes') {
+				e.preventDefault();
+				// $('.extra').slideUp(200);
+			}
+		})
+		
 	</script>
 </body>
 </html>

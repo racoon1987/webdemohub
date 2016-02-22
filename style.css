@@ -113,7 +113,43 @@ section .container p.lead {
 .demo-title p {
 	font-size: 15px;
 }
-
+.extra {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    min-height: 150px;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    /*display: none; */
+}
+.extra h2{
+	margin-top: 10px;
+	color: whitesmoke;
+}
+.extra a {
+    text-decoration: none;
+    font-size: 16px;
+    color: whitesmoke;
+    line-height: 200%;
+    display: block
+    
+}
+.extra a:hover, .extra a:active {
+    background: #2C9FFF;
+}
+.extra button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+    font-size: 27px;
+    background: #2C9FFF;
+    border: 1px #555 solid;
+    border-radius: 2px;
+    color: whitesmoke;
+}
 /* ABOUTME SECTION */
 #aboutme {
     min-height: 550px;
