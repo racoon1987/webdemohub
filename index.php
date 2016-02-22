@@ -1,5 +1,6 @@
 <?php
 $base_url = 'http://217.199.187.70/linhphan.com/';
+$localhost = 'http://localhost/demohub/';
 
 $demo_items = [
 	'demo_ci' => [
@@ -28,19 +29,19 @@ $demo_items = [
 $extra_items = [
 	'test_reaction' => [
 		'name' => 'Test your reaction (game)',
-		'url'	=> $base_url . '',
+		'url'	=> $localhost . 'mini_projects/test_reaction/index.html',
 	],
-	'toto_list' => [
+	'todo_list' => [
 		'name' => 'A to-do list',
-		'url'	=> $base_url . '',
+		'url'	=> $localhost . 'mini_projects/todo_list/index.html',
 	],
 	'codeplayer' => [
 		'name' => 'Codeplayer (enter code and see result)',
-		'url'	=> $base_url . '',
+		'url'	=> $localhost . 'mini_projects/codeplayer/index.html',
 	],
 	'orbiting_earth' => [
 		'name' => 'Orbiting Earth',
-		'url'	=> $base_url . '',
+		'url'	=> $localhost . 'mini_projects/orbiting_earth/index.html',
 	]
 ];
 
