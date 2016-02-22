@@ -121,6 +121,8 @@ section .container p.lead {
     min-height: 150px;
     width: 100%;
     background: rgba(0,0,0,0.85);
+    padding: 10px 20px;
+    margin-bottom: -500px;
     /*display: none; */
 }
 .extra h2{
@@ -132,8 +134,8 @@ section .container p.lead {
     font-size: 16px;
     color: whitesmoke;
     line-height: 200%;
-    display: block
-    
+    display: block;
+    padding: 5px 0;
 }
 .extra a:hover, .extra a:active {
     background: #2C9FFF;
@@ -142,8 +144,8 @@ section .container p.lead {
     position: absolute;
     top: 5px;
     right: 5px;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     font-size: 27px;
     background: #2C9FFF;
     border: 1px #555 solid;

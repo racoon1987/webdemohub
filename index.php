@@ -25,6 +25,25 @@ $demo_items = [
 	]
 ];
 
+$extra_items = [
+	'test_reaction' => [
+		'name' => 'Test your reaction (game)',
+		'url'	=> $base_url . '',
+	],
+	'toto_list' => [
+		'name' => 'A to-do list',
+		'url'	=> $base_url . '',
+	],
+	'codeplayer' => [
+		'name' => 'Codeplayer (enter code and see result)',
+		'url'	=> $base_url . '',
+	],
+	'orbiting_earth' => [
+		'name' => 'Orbiting Earth',
+		'url'	=> $base_url . '',
+	]
+];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,14 +61,13 @@ $demo_items = [
 <div class="extra"> <!-- this is a bottom menu to show extra information -->
 	<div class="container">
 		<div class="row">
-			<h2>Demo's name</h2>
+			<h2>Item lists</h2>
 			<button>&times;</button>
 		</div>
 		<div class="row">
-			<a href="">aksjdakjsd asdashgd as dajshgd (asdasdasd)</a>
-			<!-- <a href="">aksjdakjsd asdashgd as dajshgd (asdasdasd)</a>
-			<a href="">aksjdakjsd asdashgd as dajshgd (asdasdasd)</a>
-			<a href="">aksjdakjsd asdashgd as dajshgd (asdasdasd)</a> -->
+			<?php foreach($extra_items as $item) { 
+				echo "<a href='". $item['url'] ."'>" . $item['name'] . "</a>";				
+			} ?>
 		</div>
 	</div>
 </div>
@@ -145,9 +163,14 @@ $demo_items = [
 		$('.gallery a').click(function(e){
 			if($(this).data('extra') == 'yes') {
 				e.preventDefault();
-				// $('.extra').slideUp(200);
+				$('.extra').animate({'margin-bottom':0}, 700);
 			}
-		})
+		});
+
+		$('.extra button').click(function(e){
+			e.preventDefault();
+			$('.extra').animate({'margin-bottom':'-500px'}, 700);
+		});
 		
 	</script>
 </body>
