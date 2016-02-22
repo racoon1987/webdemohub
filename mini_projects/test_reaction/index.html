@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		#box {
+			width: 100px;
+			height: 100px;
+			background: green;
+			position: relative;
+		}
+		#field {
+			border: 1px black solid;
+			width: 400px;
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+<h3>Your time: <span id="time"></span></h3>
+<div id="field">	
+	<div id="box"></div>
+</div>
+<script>
+	function getRandomColor(){
+		var letters = '0123456789ABCDEF'.split('');
+		var color = '#';
+		for(var i = 0; i < 6; i++) {
+			color += letters[Math.round(Math.random() * 15)];
+		}
+		return color;
+	}
+	
+	var clickTime, createdTime, reactionTime;
+	var field = document.getElementById('field');
+
+	function makeBox() {
+		var time = Math.random(); 
+		var left = Math.random() * (field.clientWidth - 100); 
+		var top = Math.random() * (field.clientHeight - 100);
+		time = time * 1500;
+
+		setTimeout(function() {
+			if(Math.random() > 0.5) {
+				document.getElementById('box').style.borderRadius = '100px';
+			} else {
+				document.getElementById('box').style.borderRadius = '0';
+			}
+			
+			document.getElementById('box').style.backgroundColor = getRandomColor();
+			document.getElementById('box').style.top = top + 'px';
+			document.getElementById('box').style.left = left + 'px';
+			document.getElementById('box').style.display = 'block';
+			console.log('top:' + top + ' left:' + left);
+			createdTime = Date.now();
+		}, time);
+	}
+
+	document.getElementById('box').onclick = function() {
+		clickTime = Date.now();
+		reactionTime = ( clickTime - createdTime ) / 1000;
+		document.getElementById('time').innerHTML = reactionTime;
+		this.style.display = 'none';
+		makeBox();
+	}
+	makeBox();
+</script>
+</body>
+</html>
