@@ -87,15 +87,11 @@ html, body {
 }
 #universe {
 	background: black;
-	/*background: -webkit-radial-gradient(#555, #000);
-	background: -moz-radial-gradient(#555, #000);
-	background: -o-radial-gradient(#555, #000);
-	background: radial-gradient(#555, #000);*/
 }
 #stars {
 	height: 1000px;
 	width: 1900px;
-	background: url('img/universe.png');
+	background: url('img/universe.jpg');
 	background-size: cover;
 	position: relative;
 	z-index: 2;
