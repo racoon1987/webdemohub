@@ -1,6 +1,5 @@
 <?php
-$base_url = 'http://217.199.187.70/linhphan.com/';
-$localhost = 'http://localhost/demohub/';
+include 'base_url.php';
 
 $demo_items = [
 	'demo_ci' => [
@@ -51,23 +50,39 @@ $extra_items = [
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>A PHP demo page created by Linh Phan</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">	
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="animate.css">
+	<style>
+	.back-to-demohub {
+	    z-index: 20;
+	    position: fixed;
+	    bottom: 30px;
+	    right: 20px;
+	    background: rgba(0,0,0,0.75);
+	    color: whitesmoke;
+	    padding: 10px 14px;
+	    border-radius: 7px;
+	}
+	</style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="130">
-
+<a href="<?php echo $base_url . 'demohub/index.php';?>">
+	<div class="back-to-demohub">
+		<center><span class="glyphicon glyphicon-chevron-left"></span></center>
+	</div>
+</a>
 <div class="extra"> <!-- this is a bottom menu to show extra information -->
 	<div class="container">
 		<div class="row">
-			<h2>Item lists</h2>
-			<button>&times;</button>
+			<h2 id="close">Item lists <span class="glyphicon glyphicon-menu-down"></span></h2>
+			<!-- <button><span class="glyphicon glyphicon-remove"></span></button> -->
 		</div>
 		<div class="row">
 			<?php foreach($extra_items as $item) { 
-				echo "<a href='". $item['url'] ."'>" . $item['name'] . "</a>";				
+				echo "<a href='". $item['url'] ."'><span class='glyphicon glyphicon-new-window'></span> " . $item['name'] . "</a>";			
 			} ?>
 		</div>
 	</div>
@@ -101,7 +116,7 @@ $extra_items = [
 	</div>
 </section>
 
-<section id="demos" class="padding80 wow bounceInLeft" data-wow-offset="300">	
+<section id="demos" class="padding80 wow slideInLeft" data-wow-offset="300">	
 	<div class="container">
 		<h1>DEMOS</h1>
 		<p class="lead">My latest CodeIgniter, Laravel, HTML, CSS, Javascript demos.</p>
@@ -121,16 +136,16 @@ $extra_items = [
 						</a>
 					</div> <!-- end gallery --> 	
 				</div>					
-			<?php } ?>	
+			<?php } ?>
 		</div>
 	</div>
 </section>
 
-<section id="aboutme" class="padding80 wow bounceInRight" data-wow-offset="300">
+<section id="aboutme" class="padding80 wow slideInUp" data-wow-offset="300">
 	<div class="container">
 		<div class="row portrait">
 			<div class="col-sm-3">
-				<img src="imgs/myPortrait70.png" alt="My portrait" class="img-thumbnail img-responsive">
+				<img src="imgs/myPortrait70.jpg" alt="My portrait" class="img-thumbnail img-responsive">
 			</div>
 			<div class="col-sm-9">
 				<h1>Linh Phan</h1>				
@@ -157,7 +172,7 @@ $extra_items = [
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<!-- <script type="text/javascript" src="wow.js"></script> -->
 	<script>
-		if($(window).width() > 768) {
+		if($(window).width() > 960) {
 			new WOW().init();
 		}
 
@@ -168,11 +183,17 @@ $extra_items = [
 			}
 		});
 
-		$('.extra button').click(function(e){
+		$('#close').click(function(e){
 			e.preventDefault();
 			$('.extra').animate({'margin-bottom':'-500px'}, 700);
 		});
 		
+		$('body > *').not('body > .extra').click(function(e){
+			if($('.extra').css('margin-bottom') == '0px') {
+				e.preventDefault();
+				$('.extra').animate({'margin-bottom':'-500px'}, 700);
+			}			
+		});
 	</script>
 </body>
 </html>

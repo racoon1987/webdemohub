@@ -1,0 +1,4 @@
+- create UI for mini projects
+- buy a domain
+- create a link to back to demowebhub, this button has a inline style and $base_url
+- fix orbiting earth not work on iphone
