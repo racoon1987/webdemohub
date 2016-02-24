@@ -74,6 +74,9 @@ ul li:active {
 #trash {
 	background: rgba(178, 73, 38, 0.7);
 	width: 400px;
-	height: 250px;
+	height: 200px;
 	margin-top: 100px;
+	font-size: 18px;
+	padding-top: 50px;
+	text-align: center;
 }

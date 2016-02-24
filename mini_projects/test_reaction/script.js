@@ -1,7 +1,21 @@
-document.getElementById('box').style.display = 'none';
-document.getElementById('gameover').style.display = 'none';
+// Elements used in game
+var box = document.getElementById('box');
+var gameoverText = document.getElementById('gameover');
+var field = document.getElementById('field');
+var startButton = document.getElementById('start');
+var timeRemainingText = document.getElementById('time');
+var score = document.getElementById('score');
+var coverScreen = document.getElementById('cover-screen');
+
+// Initialize game
+var clickTime, createdTime, reactionTime;
+var totalPoint = 0;
 var remainingTime = 0;
 
+box.style.display = 'none';
+gameoverText.style.display = 'none';
+
+// Get random color for the box
 function getRandomColor(){
 	var letters = '0123456789ABCDEF'.split('');
 	var color = '#';
@@ -11,33 +25,31 @@ function getRandomColor(){
 	return color;
 }
 
-var clickTime, createdTime, reactionTime;
-var field = document.getElementById('field');
-var totalPoint = 0;
-
+// Create a new box - actually show the box again after it was hidden when user click on it
 function makeBox() {
 	var time = Math.random(); 
 	var left = Math.random() * (field.clientWidth - 100); 
 	var top = Math.random() * (field.clientHeight - 100);
-	time = time * 1500;  // box appear after 1,5s or less
+	time = time * 1500;  // box appears again after 1,5s or less
 
 	setTimeout(function() {
 		if(Math.random() > 0.5) {
-			document.getElementById('box').style.borderRadius = '100px';
+			box.style.borderRadius = '100px';
 		} else {
-			document.getElementById('box').style.borderRadius = '0';
+			box.style.borderRadius = '0';
 		}
 		
-		document.getElementById('box').style.backgroundColor = getRandomColor();
-		document.getElementById('box').style.top = top + 'px';
-		document.getElementById('box').style.left = left + 'px';
-		document.getElementById('box').style.display = 'block';
+		box.style.backgroundColor = getRandomColor();
+		box.style.top = top + 'px';
+		box.style.left = left + 'px';
+		box.style.display = 'block';
 
 		createdTime = Date.now();
 	}, time);
 }
 
-document.getElementById('box').onclick = function() {
+// Create a new box after a short time when user click on an existing box
+box.onclick = function() {
 	var point = 0;
 
 	clickTime = Date.now();
@@ -52,31 +64,40 @@ document.getElementById('box').onclick = function() {
 
 	totalPoint += point;
 
-	document.getElementById('point').innerHTML = totalPoint;
+	score.innerHTML = totalPoint;
 	this.style.display = 'none';
 
 	makeBox();
 }
 
-document.getElementById('start').onclick = function() {
+// Start the game when user click on the start button
+startButton.onclick = function() {
 	remainingTime = 30;
-	document.getElementById('point').innerHTML = 0;
-	document.getElementById('gameover').style.display = 'none';
-	document.getElementById('start').style.display = 'none';
-	document.getElementById('cover-screen').style.display = 'none';
+	totalPoint = 0;
+	box.style.display = 'none';
+	score.innerHTML = 0;
+	gameoverText.style.display = 'none';
+	startButton.style.display = 'none';
+	coverScreen.style.display = 'none';
 	makeBox();
 
 	var interval = setInterval(function(){
 		remainingTime -= 1;
 		remainingTimeText = remainingTime + 's';
-		document.getElementById('time').innerHTML = remainingTimeText;
+		timeRemainingText.innerHTML = remainingTimeText;
 	}, 1000);
 
 	setTimeout(function(){
 		clearInterval(interval);
-		document.getElementById('cover-screen').style.display = 'block';
-		document.getElementById('start').style.display = 'block';
-		document.getElementById('time').innerHTML = '0s';			
-		document.getElementById('gameover').style.display = 'block';
+
+		coverScreen.style.display = 'block';		
+		timeRemainingText.innerHTML = '0s';			
+		gameoverText.style.display = 'block';
+
+		// show start button 1,5s after the game end
+		setTimeout(function(){
+			startButton.style.display = 'block';
+		}, 2500);
+
 	}, remainingTime * 1000);
 };
