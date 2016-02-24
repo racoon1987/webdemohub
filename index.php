@@ -1,50 +1,3 @@
-<?php
-include 'base_url.php';
-
-$demo_items = [
-	'demo_ci' => [
-		'url'			=> $base_url . 'netcom/index.php/chome',
-		'img' 			=> 'imgs/codeigniter.jpg',
-		'name' 			=> 'Demo CodeIgniter',
-		'description' 	=> 'A website with social network and forum mixing.',
-		'extra'			=> 'no'
-	],
-	'demo_laravel' => [
-		'url'			=> $base_url . 'index.php/posts',
-		'img' 			=> 'imgs/laravel.jpg',
-		'name' 			=> 'Demo Laravel',
-		'description' 	=> 'A website with basic functions.',
-		'extra'			=> 'no'
-	],
-	'mini_projects' => [
-		'url'			=> $base_url . '',
-		'img' 			=> 'imgs/csshtmljs.jpg',
-		'name' 			=> 'Mini projects',
-		'description' 	=> 'Collection of mini projects (HTML, CSS, Javascript).',
-		'extra'			=> 'yes'
-	]
-];
-
-$extra_items = [
-	'test_reaction' => [
-		'name' => 'Test your reaction (game)',
-		'url'	=> $localhost . 'mini_projects/test_reaction/index.html',
-	],
-	'todo_list' => [
-		'name' => 'A to-do list',
-		'url'	=> $localhost . 'mini_projects/todo_list/index.html',
-	],
-	'codeplayer' => [
-		'name' => 'Codeplayer (enter code and see result)',
-		'url'	=> $localhost . 'mini_projects/codeplayer/index.html',
-	],
-	'orbiting_earth' => [
-		'name' => 'Orbiting Earth',
-		'url'	=> $localhost . 'mini_projects/orbiting_earth/index.html',
-	]
-];
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,35 +7,23 @@ $extra_items = [
 	<title>A PHP demo page created by Linh Phan</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">	
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="animate.css">
-	<style>
-	.back-to-demohub {
-	    z-index: 20;
-	    position: fixed;
-	    bottom: 30px;
-	    right: 20px;
-	    background: rgba(0,0,0,0.75);
-	    color: whitesmoke;
-	    padding: 10px 14px;
-	    border-radius: 7px;
-	}
-	</style>
+	<link rel="stylesheet" href="animate.css">	
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="130">
-<a href="<?php echo $base_url . 'demohub/index.php';?>">
-	<div class="back-to-demohub">
-		<center><span class="glyphicon glyphicon-chevron-left"></span></center>
-	</div>
-</a>
-<div class="extra"> <!-- this is a bottom menu to show extra information -->
+<?php
+include 'links.php';
+?>
+<style>.back-to-demowebhub {display: none;}</style>
+
+<div class="bottom-menu"> <!-- this is a bottom menu to show extra information -->
 	<div class="container">
 		<div class="row">
-			<h2 id="close">Item lists <span class="glyphicon glyphicon-menu-down"></span></h2>
+			<h2 id="slide-down">Item lists <span class="glyphicon glyphicon-menu-down"></span></h2>
 			<!-- <button><span class="glyphicon glyphicon-remove"></span></button> -->
 		</div>
 		<div class="row">
-			<?php foreach($extra_items as $item) { 
-				echo "<a href='". $item['url'] ."'><span class='glyphicon glyphicon-new-window'></span> " . $item['name'] . "</a>";			
+			<?php foreach($bottom_links as $link) {
+				echo "<a href='". $link['url'] ."'><span class='glyphicon glyphicon-new-window'></span> " . $link['name'] . "</a>";			
 			} ?>
 		</div>
 	</div>
@@ -125,7 +66,7 @@ $extra_items = [
 				<!-- show links to the demo applications -->
 				<div class="col-md-4 col-xs-6">
 					<div class="gallery">						
-						<a href="<?php echo $demo['url']; ?>" data-extra="<?php echo $demo['extra']; ?>">
+						<a href="<?php echo $demo['url']; ?>" data-bottom-menu="<?php echo $demo['extra']; ?>">
 							<div class="demo-thumb">
 								<img src="<?php echo $demo['img']; ?>" alt="<?php echo $demo['name']; ?>">
 							</div>					
@@ -165,33 +106,34 @@ $extra_items = [
 </section>
 
 <footer>
-	<p>This website was created by <span><strong>Linh Phan</strong></span>.</p>
+	<p>This website was created by <span><strong>Linh Phan</strong> - 2016</span>.</p>
 </footer>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<!-- <script type="text/javascript" src="wow.js"></script> -->
 	<script>
+		var bottomMenu = $('.bottom-menu');
 		if($(window).width() > 960) {
 			new WOW().init();
 		}
 
 		$('.gallery a').click(function(e){
-			if($(this).data('extra') == 'yes') {
+			if($(this).data('bottom-menu') == 'yes') {
 				e.preventDefault();
-				$('.extra').animate({'margin-bottom':0}, 700);
+				bottomMenu.animate({'margin-bottom':0}, 700);
 			}
 		});
 
 		$('#close').click(function(e){
 			e.preventDefault();
-			$('.extra').animate({'margin-bottom':'-500px'}, 700);
+			bottomMenu.animate({'margin-bottom':'-500px'}, 700);
 		});
 		
-		$('body > *').not('body > .extra').click(function(e){
-			if($('.extra').css('margin-bottom') == '0px') {
+		$('body > *').not('body > .bottom-menu').click(function(e){
+			if(bottomMenu.css('margin-bottom') == '0px') {
 				e.preventDefault();
-				$('.extra').animate({'margin-bottom':'-500px'}, 700);
+				bottomMenu.animate({'margin-bottom':'-500px'}, 700);
 			}			
 		});
 	</script>

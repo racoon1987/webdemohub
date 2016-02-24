@@ -1,149 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style>
-		html, body {
-			margin: 0;
-			padding: 0;
-			height: 100%;
-			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-			line-height: 150%;
-		}
-		#box {
-			width: 100px;
-			height: 100px;
-			background: green;
-			position: relative;
-		}
-		#field {
-			position: relative;
-			border-top: 1px black solid;
-			border-bottom: 1px black solid;
-			width: 100%;
-			height: 65%;
-		}
-		#showPoint, #remainingTime, #gameover {
-			position: absolute;
-			z-index: 10;
-			top: 0;
-		}
-		#showPoint {
-			left: 10px;
-		}
-		#remainingTime {
-			right: 10px;
-		}
-	 	#gameover {
-	 		left: 44%;
-	 	}
-		p {
-			font-size: 18px;
-			padding: 0 50px;
-		}
-		button {
-			position: relative;
-			z-index: 10;
-			margin-top: 100px;
-		    padding: 10px 34px;
-		    font-size: 20px;
-		    margin-bottom: 10px;
-		}
-	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Test your reaction</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p>Rule: If you touch circle and square in less than 1s, you'll get points. The less time it takes you to touch circle and square, the more points you'll get. You have 30 seconds to get as many points as you can. Have fun!</p>
+<p><strong>Rule: </strong> If you touch circle and square in less than 1s, you'll get points. The less time it takes you to touch circle and square, the more points you'll get. You have 30 seconds to get as many points as you can. Have fun!</p>
 <div id="field">
+	<div id="cover-screen">
+		<h2 id="gameover">Game Over</h2>
+		<center><button id="start">Start new game</button></center>
+	</div>
 	<h2 id="showPoint">Your score: <span id="point"></span></h2>
 	<h2 id="remainingTime">Remaining time: <span id="time"></span></h2>
-	<h2 id="gameover">Game Over</h2>
+	
 	<div id="box"></div>
-	<center><button id="start">Start new game</button></center>
 </div>
 
-<script>
-	document.getElementById('box').style.display = 'none';
-	document.getElementById('gameover').style.display = 'none';
-	var remainingTime = 0;
-
-	function getRandomColor(){
-		var letters = '0123456789ABCDEF'.split('');
-		var color = '#';
-		for(var i = 0; i < 6; i++) {
-			color += letters[Math.round(Math.random() * 15)];
-		}
-		return color;
-	}
-	
-	var clickTime, createdTime, reactionTime;
-	var field = document.getElementById('field');
-	var totalPoint = 0;
-
-	function makeBox() {
-		var time = Math.random(); 
-		var left = Math.random() * (field.clientWidth - 100); 
-		var top = Math.random() * (field.clientHeight - 100);
-		time = time * 1500;  // box appear after 1,5s or less
-
-		setTimeout(function() {
-			if(Math.random() > 0.5) {
-				document.getElementById('box').style.borderRadius = '100px';
-			} else {
-				document.getElementById('box').style.borderRadius = '0';
-			}
-			
-			document.getElementById('box').style.backgroundColor = getRandomColor();
-			document.getElementById('box').style.top = top + 'px';
-			document.getElementById('box').style.left = left + 'px';
-			document.getElementById('box').style.display = 'block';
-			// console.log('top:' + top + ' left:' + left);
-			createdTime = Date.now();
-		}, time);
-	}
-
-	document.getElementById('box').onclick = function() {
-		var point = 0;
-
-		clickTime = Date.now();
-		reactionTime = ( clickTime - createdTime ) / 1000;
-
-		if(reactionTime < 1) {
-			point = Math.round(reactionTime / 0.01);
-		}
-		else {
-			point = 0;
-		}
-
-		totalPoint += point;
-
-		document.getElementById('point').innerHTML = totalPoint;
-		this.style.display = 'none';
-
-		if(remainingTime > 0) {
-			makeBox();
-		}
-	}
-
-	document.getElementById('start').onclick = function(){
-		remainingTime = 30;
-		document.getElementById('start').style.display = 'none';
-		makeBox();
-
-		var interval = setInterval(function(){
-			remainingTime -= 1;
-			remainingTimeText = remainingTime + 's';
-			document.getElementById('time').innerHTML = remainingTimeText;
-		}, 1000);
-
-		setTimeout(function(){
-			document.getElementById('box').style.display = 'none';
-			document.getElementById('start').style.display = 'block';
-			document.getElementById('time').innerHTML = '0s';
-			clearInterval(interval);
-			document.getElementById('gameover').style.display = 'block';
-		}, remainingTime * 1000);
-	};
-	
-</script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,18 +1,18 @@
 /*Star Pulse Animation*/
 @-o-keyframes starPulse {
-	from {opacity: 1}
+	from {opacity: 0.8}
 	to {opacity: 0.4}
 }
 @-moz-keyframes starPulse {
-	from {opacity: 1}
+	from {opacity: 0.8}
 	to {opacity: 0.4}
 }
 @-webkit-keyframes starPulse {
-	from {opacity: 1}
+	from {opacity: 0.8}
 	to {opacity: 0.4}
 }
 @keyframes starPulse {
-	from {opacity: 1}
+	from {opacity: 0.8}
 	to {opacity: 0.4}
 }
 /*Sun Fire Animation*/
@@ -70,16 +70,16 @@
 	to {transform: rotate(360deg);}
 }
 @-webkit-keyframes spin {
-	from {transform: rotate(0);}
-	to {transform: rotate(360deg);}
+	from {-webkit-transform: rotate(0);}
+	to {-webkit-transform: rotate(360deg);}
 }
 @-moz-keyframes spin {
-	from {transform: rotate(0);}
-	to {transform: rotate(360deg);}
+	from {-moz-transform: rotate(0);}
+	to {-moz-transform: rotate(360deg);}
 }
 @-o-keyframes spin {
-	from {transform: rotate(0);}
-	to {transform: rotate(360deg);}
+	from {-o-transform: rotate(0);}
+	to {-o-transform: rotate(360deg);}
 }
 html, body {
 	height: 100%;
@@ -94,6 +94,7 @@ html, body {
 	background: url('img/universe.jpg');
 	background-size: cover;
 	position: relative;
+	opacity: 0.8;
 	z-index: 2;
 	-webkit-animation: starPulse 4s infinite alternate;
 	-moz-animation: starPulse 4s infinite alternate;
@@ -101,10 +102,10 @@ html, body {
 	animation: starPulse 4s infinite alternate;
 }
 #sun {
-	margin-top: -100px;
-	margin-left: -100px;
-	height: 180px;
-	width: 180px;
+	margin-top: -80px;
+	margin-left: -80px;
+	height: 150px;
+	width: 150px;
 	background: orange;
 	background: -webkit-radial-gradient(#f5c313, #ec7e08);
 	background: -moz-radial-gradient(#f5c313, #ec7e08);
@@ -128,7 +129,6 @@ html, body {
 	animation: sunFire 4s infinite alternate;
 }
 #earthOrbit {
-	/*border: 1px red solid;*/
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -161,7 +161,6 @@ html, body {
 	animation: spin 4s linear infinite;
 }
 #moonOrbit {
-	/*border: 1px red solid;*/
 	height: 160px;
 	width: 160px;
 	position: absolute;

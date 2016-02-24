@@ -113,7 +113,7 @@ section .container p.lead {
 .demo-title p {
 	font-size: 15px;
 }
-.extra {
+.bottom-menu {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -125,7 +125,7 @@ section .container p.lead {
     margin-bottom: -500px;
     padding-bottom: 10px;
 }
-.extra h2#close {
+.bottom-menu h2#slide-down {
     margin-top: 8px;
     text-align: center;
     color: whitesmoke;
@@ -133,7 +133,7 @@ section .container p.lead {
     padding-bottom: 5px;
     cursor: pointer;
 }
-.extra a {
+.bottom-menu a {
     text-decoration: none;
     font-size: 16px;
     color: whitesmoke;
@@ -141,10 +141,10 @@ section .container p.lead {
     display: block;
     padding: 5px 20px;
 }
-.extra a:hover, .extra a:active {
+.bottom-menu a:hover, .bottom-menu a:active {
     background: #2C9FFF;
 }
-.extra button {
+/*.bottom-menu button {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -155,11 +155,11 @@ section .container p.lead {
     border: 1px #555 solid;
     border-radius: 2px;
     color: whitesmoke;
-}
-.extra .glyphicon-menu-down {
+}*/
+.bottom-menu .glyphicon-menu-down {
 	font-size: 23px;
 }
-.extra .glyphicon-new-window {
+.bottom-menu .glyphicon-new-window {
 	padding-right: 5px;
 }
 /* ABOUTME SECTION */
