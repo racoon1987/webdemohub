@@ -18,19 +18,29 @@ body {
     background: linear-gradient(rgba(17,17,17,0.85), rgba(0,0,0,0)); /*  Standard syntax  */
 }
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover  {
-	color: white;
+	color: whitesmoke;
+	text-shadow: 0 0 5px #333;
 	background: none;
+}
+.navbar-inverse a.navbar-brand {
+	font-family: 'Courgette', cursive;
+    font-size: 26px;
+    color: rgba(205,220,57,0.92);
+    text-shadow: 0 0 5px #333;
+}
+.navbar-inverse a.navbar-brand:hover, .navbar-inverse a.navbar-brand:active {
+	color: #D3E23B;
 }
 .navbar-nav li a {	
     padding: 0;
     margin: 0;
 }
 .navbar-inverse .navbar-nav > li > a {
-	font-size: 16px;
+	font-size: 17px;
 }
 .navbar-nav li {
 	padding: 6px 0;
-    margin: 8px 20px;
+    margin: 8px 14px;
 }
 .navbar-inverse .navbar-nav > li {
 	border-bottom: 3px rgba(0,0,0,0) solid;

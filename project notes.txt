@@ -1,6 +1,6 @@
 
-- create UI for mini projects
 - restyle css to fit mobile devices
+- create UI for mini projects
 - add
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 

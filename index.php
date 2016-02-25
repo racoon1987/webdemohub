@@ -5,6 +5,7 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>A PHP demo page created by Linh Phan</title>
+	<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>	
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">	
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="animate.css">	
@@ -38,7 +39,7 @@ include 'links.php';
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="">DemoWebHub</a>
+      <a class="navbar-brand" href="<?php echo $demowebhub_url;?>">DemoWebHub</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">      
       <ul class="nav navbar-nav navbar-right">
