@@ -128,19 +128,19 @@
 		$('.gallery a').click(function(e){
 			if($(this).data('bottom-menu') == 'yes') {
 				e.preventDefault();
-				bottomMenu.animate({'margin-bottom':0}, 700);
+				bottomMenu.animate({'margin-bottom':0}, 400);
 			}
 		});
 
 		$('#slide-down').click(function(e){
 			e.preventDefault();
-			bottomMenu.animate({'margin-bottom':'-500px'}, 700);
+			bottomMenu.animate({'margin-bottom':'-500px'}, 400);
 		});
 		
 		$('body > *').not('body > .bottom-menu').click(function(e){
 			if(bottomMenu.css('margin-bottom') == '0px') {
 				e.preventDefault();
-				bottomMenu.animate({'margin-bottom':'-500px'}, 700);
+				bottomMenu.animate({'margin-bottom':'-500px'}, 400);
 			}			
 		});
 	</script>
