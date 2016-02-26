@@ -16,20 +16,6 @@ include 'links.php';
 ?>
 <style>.back-to-demowebhub {display: none;}</style>
 
-<div class="bottom-menu"> <!-- this is a bottom menu to show extra information -->
-	<div class="container">
-		<div class="row">
-			<h2 id="slide-down">Item lists <span class="glyphicon glyphicon-menu-down"></span></h2>
-			<!-- <button><span class="glyphicon glyphicon-remove"></span></button> -->
-		</div>
-		<div class="row">
-			<?php foreach($bottom_links as $link) {
-				echo "<a href='". $link['url'] ."'><span class='glyphicon glyphicon-new-window'></span> " . $link['name'] . "</a>";			
-			} ?>
-		</div>
-	</div>
-</div>
-
 <nav class="navbar navbar-default navbar-inverse navbar-fixed-top navbar-height padding20">
   <div class="container">
     <div class="navbar-header">
@@ -56,13 +42,14 @@ include 'links.php';
 		<h1>PHP DEVELOPER</h1>
 		<p class="lead">Above one year of experience in creating website with PHP - MySQL.</p>
 	</div>
+	<center><a href="#demos"><button id="goToDemo">See demos</button></a></center>
 </section>
 
 <section id="demos" class="padding80 wow slideInLeft" data-wow-offset="300">	
 	<div class="container">
 		<h1>DEMOS</h1>
 		<p class="lead">My latest CodeIgniter, Laravel, HTML, CSS, Javascript demos.</p>
-		<div class="row">			
+		<div class="row">	
 			<?php foreach($demo_items as $demo) { ?>
 				<!-- show links to the demo applications -->
 				<div class="col-md-4 col-xs-6">
@@ -82,6 +69,19 @@ include 'links.php';
 		</div>
 	</div>
 </section>
+<div class="bottom-menu"> <!-- this is a bottom menu to show extra information -->
+	<div class="container">
+		<div class="row">
+			<h2 id="slide-down">Item lists <span class="glyphicon glyphicon-menu-down"></span></h2>
+			<!-- <button><span class="glyphicon glyphicon-remove"></span></button> -->
+		</div>
+		<div class="row">
+			<?php foreach($bottom_links as $link) {
+				echo "<a href='". $link['url'] ."'><span class='glyphicon glyphicon-new-window'></span> " . $link['name'] . "</a>";			
+			} ?>
+		</div>
+	</div>
+</div>
 
 <section id="aboutme" class="padding80 wow slideInUp" data-wow-offset="300">
 	<div class="container">
@@ -114,6 +114,12 @@ include 'links.php';
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<!-- <script type="text/javascript" src="wow.js"></script> -->
 	<script>
+		// if($('#home').height() > 499) {
+		// 	$('#goToDemo').show();
+		// } else {
+		// 	$('#goToDemo').hide();
+		// }
+
 		var bottomMenu = $('.bottom-menu');
 		if($(window).width() > 960) {
 			new WOW().init();
@@ -126,7 +132,7 @@ include 'links.php';
 			}
 		});
 
-		$('#close').click(function(e){
+		$('#slide-down').click(function(e){
 			e.preventDefault();
 			bottomMenu.animate({'margin-bottom':'-500px'}, 700);
 		});
