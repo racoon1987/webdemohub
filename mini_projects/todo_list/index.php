@@ -13,8 +13,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>	
 </head>
 <body>
+
+<?php include '../../links.php'; ?>
+
 <div class="container" id="todolistWrapper">
-	<h1>the jQuery To Do List</h1>
+	<h1>A To Do List With jQuery</h1>
 	
 	<div id="todoList">
 		<ul>
@@ -52,7 +55,7 @@
 		<li>* Click on day-tabs to add new task.</li>
 		<li>* Tasks can be moved up/down or to other tabs by dragging and dropping.</li>			
 	</ul>
-	<div id="trash">Terminator: Drop items here to destroy them.</div>
+	<center><div id="trash">Terminator: Drop items here to destroy them.</div></center>
 </div>
 <script src="script.js"></script>
 </body>

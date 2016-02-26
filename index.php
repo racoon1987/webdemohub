@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="animate.css">	
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="130">
-<?php
-include 'links.php';
-?>
+
+<?php include 'links.php'; ?>
+
 <style>.back-to-demowebhub {display: none;}</style>
 
 <nav class="navbar navbar-default navbar-inverse navbar-fixed-top navbar-height padding20">

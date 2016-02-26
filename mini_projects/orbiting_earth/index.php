@@ -9,6 +9,9 @@
 	<link rel="stylesheet" href="style.css">	
 </head>
 <body id="universe">
+
+	<?php include '../../links.php'; ?>
+	
 	<div id="stars"></div>
 	<div id="sun"></div>
 	<div id="earthOrbit">

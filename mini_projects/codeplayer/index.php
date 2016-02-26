@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Learning jQuery</title>
+	<title>Codeplayer</title>
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +9,9 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 </head>
 <body>
+
+<?php include '../../links.php'; ?>
+
 <div id="wrapper">
 	<div id="menuBar">
 		<div id="logo">

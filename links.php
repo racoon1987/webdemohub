@@ -1,7 +1,7 @@
 <?php
 $base_url = 'http://demowebhub.com/';
-$demowebhub_localhost_url = 'http://localhost/demohub/';
-$demowebhub_url = 'http://demowebhub.com/demowebhub/index.php';
+// $demowebhub_url = 'http://demowebhub.com/demowebhub/';    
+$demowebhub_url ='http://localhost/webdemohub/';
 
 $demo_items = [
 	'demo_ci' => [
@@ -12,7 +12,7 @@ $demo_items = [
 		'extra'			=> 'no'
 	],
 	'demo_laravel' => [
-		'url'			=> $base_url . 'index.php/posts',
+		'url'			=> $base_url . 'posts',
 		'img' 			=> 'imgs/laravel.jpg',
 		'name' 			=> 'Demo Laravel',
 		'description' 	=> 'A website with basic functions.',
@@ -30,19 +30,19 @@ $demo_items = [
 $bottom_links = [
 	'test_reaction' => [
 		'name' => 'Test your reaction (game)',
-		'url'	=> $demowebhub_localhost_url . 'mini_projects/test_reaction/index.html',
+		'url'	=> $demowebhub_url . 'mini_projects/test_reaction/',
 	],
 	'todo_list' => [
 		'name' => 'A to-do list',
-		'url'	=> $demowebhub_localhost_url . 'mini_projects/todo_list/index.html',
+		'url'	=> $demowebhub_url . 'mini_projects/todo_list/',
 	],
 	'codeplayer' => [
 		'name' => 'Codeplayer (enter code and see result)',
-		'url'	=> $demowebhub_localhost_url . 'mini_projects/codeplayer/index.html',
+		'url'	=> $demowebhub_url . 'mini_projects/codeplayer/',
 	],
 	'orbiting_earth' => [
 		'name' => 'Orbiting Earth',
-		'url'	=> $demowebhub_localhost_url . 'mini_projects/orbiting_earth/index.html',
+		'url'	=> $demowebhub_url . 'mini_projects/orbiting_earth/',
 	]
 ];
 ?>

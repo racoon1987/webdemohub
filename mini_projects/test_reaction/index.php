@@ -6,6 +6,9 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<?php include '../../links.php'; ?>
+
 <p><strong>Rule: </strong> If you touch circle and square in less than 1s, you'll get points. The less time it takes you to touch circle and square, the more points you'll get. You have 30 seconds to get as many points as you can. Have fun!</p>
 <div id="field">
 	<div id="cover-screen">
