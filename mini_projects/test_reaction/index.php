@@ -9,14 +9,14 @@
 
 <?php include '../../links.php'; ?>
 
-<p><strong>Rule: </strong> If you touch circle and square in less than 1s, you'll get points. The less time it takes you to touch circle and square, the more points you'll get. You have 30 seconds to get as many points as you can. Have fun!</p>
+<p><strong>Rule: </strong> If you touch/click on circle and square in less than 1s, you'll get points. The less time it takes you to touch them, the more points you'll get. You have 30 seconds to get as many points as you can. Have fun!</p>
 <div id="field">
 	<div id="cover-screen">
-		<h2 id="gameover">Game Over</h2>
+		<h4 id="gameover">Game Over</h4>
 		<center><button id="start">Start new game</button></center>
 	</div>
-	<h2 id="showPoint">Your score: <span id="score"></span></h2>
-	<h2 id="remainingTime">Remaining time: <span id="time"></span></h2>
+	<h4 id="showPoint">Your score: <span id="score"></span></h4>
+	<h4 id="remainingTime">Remaining time: <span id="time"></span></h4>
 	
 	<div id="box"></div>
 </div>

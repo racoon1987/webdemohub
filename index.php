@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>A PHP demo page created by Linh Phan</title>
 	<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>	
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">	
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="animate.css">	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="libs/css/style.css">
+	<link rel="stylesheet" href="libs/css/animate.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="130">
 
@@ -40,7 +40,7 @@
 <section id="home" class="padding80">
 	<div class="cover-text">
 		<h1>PHP DEVELOPER</h1>
-		<p class="lead">Above one year of experience in creating website with PHP - MySQL.</p>
+		<p class="lead">Above one year of experience in creating websites with PHP - MySQL.</p>
 	</div>
 	<center><a href="#demos"><button id="goToDemo">See demos</button></a></center>
 </section>
@@ -53,26 +53,26 @@
 			<?php foreach($demo_items as $demo) { ?>
 				<!-- show links to the demo applications -->
 				<div class="col-md-4 col-xs-6">
-					<div class="gallery">						
-						<a href="<?php echo $demo['url']; ?>" data-bottom-menu="<?php echo $demo['extra']; ?>">
+					<div class="gallery">
+						<a href="<?php echo $demo['url']; ?>" data-bottom-menu="<?php echo $demo['bottom_link']; ?>">
 							<div class="demo-thumb">
 								<img src="<?php echo $demo['img']; ?>" alt="<?php echo $demo['name']; ?>">
-							</div>					
+							</div>
 							<div class="demo-title">
 								<h4><?php echo $demo['name']; ?></h4>
 								<p><?php echo $demo['description']; ?></p>
 							</div>
 						</a>
-					</div> <!-- end gallery --> 	
+					</div> <!-- end gallery -->
 				</div>					
 			<?php } ?>
 		</div>
 	</div>
 </section>
-<div class="bottom-menu"> <!-- this is a bottom menu to show extra information -->
+<div class="bottom-menu"> <!-- A bottom menu to show extra information -->
 	<div class="container">
 		<div class="row">
-			<h2 id="slide-down">Item lists <span class="glyphicon glyphicon-menu-down"></span></h2>
+			<h2 id="slide-down">Menu <span class="glyphicon glyphicon-menu-down"></span></h2>
 			<!-- <button><span class="glyphicon glyphicon-remove"></span></button> -->
 		</div>
 		<div class="row">
@@ -90,17 +90,17 @@
 				<img src="imgs/myPortrait70.jpg" alt="My portrait" class="img-thumbnail img-responsive">
 			</div>
 			<div class="col-sm-9">
-				<h1>Linh Phan</h1>				
-				<p>PHP developer with spirit of collaboration, quick learning and hard-working.</p>				
+				<h2>Linh Phan</h2>				
+				<p>PHP developer with spirit of collaboration, quick learning and hard-working.</p>
 			</div>
 		</div>
 		<hr>
 		<div class="row description">
 			<div class="col-sm-12">
 				<h3><strong>An extra summary:</strong></h3>
-				<p>I’m a PHP developer who started approaching this language in mid-2012. After a 3 months’ duration of self-learning, I joined a practical PHP class to learn how to create a real commercial website with PHP/MySQL. After finishing the course, I created and launched a website that focused on IT news, office softwares and software tricks. During that time, I realized that I cannot go a long way without a good foundation of knowledge in IT field. In late 2012, I determined to go to university.</p>
+				<p>I’m a PHP developer who started approaching this language in mid-2012. After 3 months self-learning duration, I joined a practical PHP course to learn how to create a real commercial website with PHP - MySQL. After finishing the course, I created and launched a website that focused on IT news, office softwares and software tricks. During that time, I realized that I cannot go a long way without a good foundation of knowledge in IT field, so I made a decision of going to university. Now, I've graduated and felt ready for the new beginning in IT.</p>
 				<h3><strong>Hobbies:</strong></h3>
-				<p>Reading books, learning new things, going jogging in the park, games, cats.</p>
+				<p>Reading books, learning new things, going jogging in the park, Japanese music, playing games, cats.</p>
 			</div>
 		</div>
 	</div>
@@ -109,17 +109,10 @@
 <footer>
 	<p>This website was created by <span><strong>Linh Phan</strong> - 2016</span>.</p>
 </footer>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-	<!-- <script type="text/javascript" src="wow.js"></script> -->
+	<script type="text/javascript" src="libs/js/jquery.min.js"></script>
+	<script src="libs/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="libs/js/wow.js"></script>
 	<script>
-		// if($('#home').height() > 499) {
-		// 	$('#goToDemo').show();
-		// } else {
-		// 	$('#goToDemo').hide();
-		// }
-
 		var bottomMenu = $('.bottom-menu');
 		if($(window).width() > 960) {
 			new WOW().init();

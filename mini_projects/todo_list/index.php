@@ -50,12 +50,13 @@
 		</ul>
 	</div>
 	<br><br>
-	<p><strong>Note: </strong></p>
+	<p><strong>Notes: </strong></p>
 	<ul>
 		<li>* Click on day-tabs to add new task.</li>
-		<li>* Tasks can be moved up/down or to other tabs by dragging and dropping.</li>			
+		<li>* Tasks can be moved up/down by dragging and dropping.</li>
+		<li>* You can drop task on a tab when that tab change to blue.</li>		
 	</ul>
-	<center><div id="trash">Terminator: Drop items here to destroy them.</div></center>
+	<center><div id="trash">Terminator: Drop tasks here to destroy them.</div></center>
 </div>
 <script src="script.js"></script>
 </body>

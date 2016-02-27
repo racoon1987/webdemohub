@@ -8,41 +8,41 @@ $demo_items = [
 		'url'			=> $base_url . 'netcom/index.php/chome',
 		'img' 			=> 'imgs/codeigniter.jpg',
 		'name' 			=> 'Demo CodeIgniter',
-		'description' 	=> 'A website with social network and forum mixing.',
-		'extra'			=> 'no'
+		'description' 	=> 'A small social network with user management.',
+		'bottom_link'	=> 'no'
 	],
 	'demo_laravel' => [
 		'url'			=> $base_url . 'posts',
 		'img' 			=> 'imgs/laravel.jpg',
 		'name' 			=> 'Demo Laravel',
-		'description' 	=> 'A website with basic functions.',
-		'extra'			=> 'no'
+		'description' 	=> 'Basic website. Create, edit posts, comment, manage policies.',
+		'bottom_link'	=> 'no'
 	],
 	'mini_projects' => [
 		'url'			=> $base_url . '',
 		'img' 			=> 'imgs/csshtmljs.jpg',
 		'name' 			=> 'Mini projects',
 		'description' 	=> 'Collection of mini projects (HTML, CSS, Javascript).',
-		'extra'			=> 'yes'
+		'bottom_link'	=> 'yes'
 	]
 ];
 
 $bottom_links = [
 	'test_reaction' => [
-		'name' => 'Test your reaction (game)',
-		'url'	=> $demowebhub_url . 'mini_projects/test_reaction/',
+		'name' => 'Test your reaction (Mini game)',
+		'url'	=> $demowebhub_url . 'mini_projects/test_reaction/index.php',
 	],
 	'todo_list' => [
-		'name' => 'A to-do list',
-		'url'	=> $demowebhub_url . 'mini_projects/todo_list/',
+		'name' => 'To-do list (jQuery)',
+		'url'	=> $demowebhub_url . 'mini_projects/todo_list/index.php',
 	],
 	'codeplayer' => [
-		'name' => 'Codeplayer (enter code and see result)',
-		'url'	=> $demowebhub_url . 'mini_projects/codeplayer/',
+		'name' => 'Codeplayer (Enter your code and see result)',
+		'url'	=> $demowebhub_url . 'mini_projects/codeplayer/index.php',
 	],
 	'orbiting_earth' => [
 		'name' => 'Orbiting Earth',
-		'url'	=> $demowebhub_url . 'mini_projects/orbiting_earth/',
+		'url'	=> $demowebhub_url . 'mini_projects/orbiting_earth/index.php',
 	]
 ];
 ?>

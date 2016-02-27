@@ -37,6 +37,7 @@ ul li:active {
 	margin: 0;
 	text-align: left;
 	font-size: 12px;
+	word-wrap: break-word;
 }
 #todoList li:hover {
 	background: #eee;

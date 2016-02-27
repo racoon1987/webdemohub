@@ -97,7 +97,7 @@ startButton.onclick = function() {
 		// show start button 1,5s after the game end
 		setTimeout(function(){
 			startButton.style.display = 'block';
-		}, 2500);
+		}, 1500);
 
 	}, remainingTime * 1000);
 };
